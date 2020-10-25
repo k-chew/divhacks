@@ -1,8 +1,8 @@
 # Kalendar
 
 Created for DivHacks 2020! This is a web app created with Flask and Python that uses the Google Calendar API.
-Track: Creating Inclusive Education
-Question: How can we assist parents in homeschooling their children?
+* Track: Creating Inclusive Education
+* Question: How can we assist parents in homeschooling their children?
 
 ## Description
 * schedule/time management tool for parents with young children in remote learning
