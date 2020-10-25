@@ -13,6 +13,37 @@
         <p>Age:</p>
         <p><input type="text" name="age" /></p>
 
+        <label>Enter Number of Classes:</label>
+        <select id="mySelect" name="selection" onChange="onChangeDropdown()">
+            <option value="">Please Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <div id="demo">
+        </div>
         <p><input type="submit" value="submit"/></p>
     </form>
+
+    <script>
+    function onChangeDropdown(){
+        var slctdValue = parseInt(document.getElementById("mySelect").value);
+        document.getElementById('demo').innerHTML = buildTextboxes(slctdValue);
+    }
+    function buildTextboxes(num){
+        var html = "";
+        for (var i=0; i < num; i++){
+            html = html + '<br/><div><label>Class: </label><input type="text" name={{ i }}'+ i + '></div>'
+        }
+        return html;
+    }
+    </script>
 {% endblock %}

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect
 app = Flask(__name__)
+app.secret_key = "much secret lel"
 
 @app.route("/")
 def home():
@@ -12,10 +13,14 @@ def calendar():
 @app.route("/children", methods=['POST', 'GET'])
 def children():
     if request.method == "POST":
-        fn = request.form["fn"]
-        ln = request.form["ln"]
-        age = request.form["age"]
-        return render_template("children.html", first_name=fn, last_name=ln, age=age)
+        session["fn"] = request.form["fn"]
+        session["ln"] = request.form["ln"]
+        session["age"] = request.form["age"]
+        session["number"] = request.form["selection"]
+        for i in range(1, int(session["number"]) + 1):
+            session[str(i)] = request.form.get(str(i-1))
+            print(request.form.get(str(i)))
+        return render_template("children.html", first_name=session["fn"], last_name=session["ln"], age=session["age"])
     else:
         return render_template("student_forms.html")
 
