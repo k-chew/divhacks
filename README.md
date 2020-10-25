@@ -4,7 +4,7 @@ Created for DivHacks 2020! This is a web app created with Flask and Python that 
 
 ## Running the app
 * note: option to remove `debug=True` from [app.py](app.py)
-`python app.py`
+* `python app.py`
 
 ## Authors
 [@k-chew](https://github.com/k-chew)
