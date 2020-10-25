@@ -14,12 +14,13 @@ Visit the app at https://kalendar-divhacks.herokuapp.com/ !
 * `python app.py`
 * note: option to remove `debug=True` from [app.py](app.py)
 
-![wireframe sketch](Wireframe.png?raw=true "Wireframe Sketch")
-
 ## Description
 * schedule/time management tool for parents with young children in remote learning
 * making it easier to integrate your kid's schedules into yours
 * ability to add events to existing Google Calendar
+
+## Brainstorming
+![wireframe sketch](Wireframe.png?raw=true "Wireframe Sketch")
 
 ## Future Implementation
 * Recommend where to fit child’s activity into their schedule given the time it takes approximately to finish
