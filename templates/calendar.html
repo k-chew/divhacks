@@ -9,7 +9,7 @@
     <button class="kalendarbtn" id="authorize_button" style="display: none;">Authorize</button>
     <button class="kalendarbtn" id="signout_button" style="display: none;">Sign Out</button>
 
-    <button class="kalendarbtn" id="create_event_button">Create event</button>
+    <button class="kalendarbtn" id="create_event_button" style="display: none;">Create event</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -68,10 +68,12 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
+          createEventButton.style.display = 'block';
           listUpcomingEvents();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
+          createEventButton.style.display = 'none';
         }
       }
 
