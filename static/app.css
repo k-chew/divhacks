@@ -1,0 +1,11 @@
+.kalendarbtn {
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    background: #ededf5;
+    text-transform: uppercase;
+}
+
+.kalendarbtn:hover {
+    background: #f7f7fa;
+}

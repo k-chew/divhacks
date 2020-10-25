@@ -9,9 +9,9 @@ def home():
 def calendar():
     return render_template('calendar.html')
 
-@app.route("/children")
-def children():
-    return render_template('children.html')
+@app.route("/kids")
+def kids():
+    return render_template('kids.html')
 
 @app.route("/rewards")
 def rewards():

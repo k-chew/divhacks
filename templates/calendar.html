@@ -2,12 +2,14 @@
 
 {% block body %}
     <div class="jumbotron text-center">
-        <h1>Your Google Calendar</h1>
-        <p class="lead">This application was built for DivHacks2020!</p>
+        <h1>Your Calendar</h1>
+        <p class="lead">You're a busy parent. You're doing great!</p>
     </div>
     <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="display: none;">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
+    <button class="kalendarbtn" id="authorize_button" style="display: none;">Authorize</button>
+    <button class="kalendarbtn" id="signout_button" style="display: none;">Sign Out</button>
+
+    <button class="kalendarbtn" id="create_event_button">Create event</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -24,6 +26,7 @@
       var SCOPES = "https://www.googleapis.com/auth/calendar";
 
       var authorizeButton = document.getElementById('authorize_button');
+      var createEventButton = document.getElementById('create_event_button');
       var signoutButton = document.getElementById('signout_button');
 
       /**
@@ -51,6 +54,7 @@
           updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
+          createEventButton.onclick = createEvent;
         }, function(error) {
           appendPre(JSON.stringify(error, null, 2));
         });
@@ -126,6 +130,38 @@
           } else {
             appendPre('No upcoming events found.');
           }
+        });
+      }
+      
+      function createEvent() {
+        var event = {
+          'summary': 'Google I/O 2015',
+          'location': '800 Howard St., San Francisco, CA 94103',
+          'description': 'A chance to hear more about Google\'s developer products.',
+          'start': {
+            'dateTime': '2020-10-28T09:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+          },
+          'end': {
+            'dateTime': '2020-10-28T17:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': 24 * 60},
+              {'method': 'popup', 'minutes': 10}
+            ]
+          }
+        };
+
+        var request = gapi.client.calendar.events.insert({
+          'calendarId': 'primary',
+          'resource': event
+        });
+
+        request.execute(function(event) {
+          appendPre('Event created: ' + event.htmlLink);
         });
       }
 
