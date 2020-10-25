@@ -4,6 +4,15 @@ Created for DivHacks 2020! This is a web app created with Flask and Python that 
 * Track: Creating Inclusive Education
 * Question: How can we assist parents in homeschooling their children?
 
+## Using the Website
+* If you would like to sign in using our test Google account:
+* username: divhacks.homeschool@gmail.com
+* password: divhacks2020
+
+## Running the App Locally
+* `python app.py`
+* note: option to remove `debug=True` from [app.py](app.py)
+
 ## Description
 * schedule/time management tool for parents with young children in remote learning
 * making it easier to integrate your kid's schedules into yours
@@ -17,10 +26,6 @@ Created for DivHacks 2020! This is a web app created with Flask and Python that 
 * Batch event adding
 * Point system for child completing activities
 * Parent can set reward for however many points completed that day (e.g. 100)
-
-## Running the app
-* note: option to remove `debug=True` from [app.py](app.py)
-* `python app.py`
 
 ## Authors
 [@k-chew](https://github.com/k-chew)
