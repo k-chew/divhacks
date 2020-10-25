@@ -5,6 +5,7 @@ Created for DivHacks 2020! This is a web app created with Flask and Python that 
 * Question: How can we assist parents in homeschooling their children?
 
 ## Using the Website
+Visit the app at https://kalendar-divhacks.herokuapp.com/ !
 * If you would like to sign in using our test Google account:
 * username: divhacks.homeschool@gmail.com
 * password: divhacks2020
